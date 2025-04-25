@@ -14,11 +14,11 @@
         class="form-control"
       />
       <div *ngIf="emailInput.invalid && emailInput.touched" class="error">
-        Please enter a valid email.
+        Por favor, introduzca un email valido.
       </div>
     </div>
     <div class="form-group">
-      <label for="password">Password:</label>
+      <label for="password">Contraseña:</label>
       <input
         type="password"
         id="password"
@@ -30,7 +30,7 @@
         class="form-control"
       />
       <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">
-        Password must be at least 8 characters.
+        La Contraseña debe tener al menos 8 caracteres.
       </div>
     </div>
     <div *ngIf="errorMessage" class="error-message">
