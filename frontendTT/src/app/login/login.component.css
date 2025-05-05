@@ -1,17 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #111;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .login-container {
-  max-width: 400px;
+  width: 400px;
   margin: 50px auto;
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #24211d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'MedievalSharp', fantasy;
 }
 
 .login-container h2 {
   text-align: center;
+  font-size: 40px;
   margin-bottom: 20px;
-  color: #333;
+  color: #a9874e;
+  font-family: 'MedievalSharp', fantasy;
 }
 
 .login-form .form-group {
@@ -22,16 +43,31 @@
   display: block;
   margin-bottom: 5px;
   font-weight: 600;
-  color: #555;
+  color: #a9874e;
 }
 
 .login-form .form-control {
   width: 100%;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #24211d;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: #ccc;
+  outline: none;
+  box-shadow: none;
+  color: #a9874e;
+}
+
+.login-form .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #a9874e;
+}
+
+.login-form .form-control:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #24211d inset !important;
+  -webkit-text-fill-color: #a9874e !important;
 }
 
 .login-form .form-control.ng-invalid.ng-touched {
@@ -53,7 +89,7 @@
 .btn-login {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #a9874e;
   border: none;
   color: white;
   font-weight: 600;
@@ -62,7 +98,16 @@
   cursor: pointer;
 }
 
-.btn-login:disabled {
-  background-color: #a0c5f7;
+.btn-login:hover {
+  background-color: #856a3d;
   cursor: not-allowed;
+}
+
+.register-text{
+  color: #a9874e;
+  padding-top: 50px;
+}
+
+.register-text a {
+  color: #856a3d;
 }
