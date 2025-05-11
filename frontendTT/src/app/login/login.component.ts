@@ -25,7 +25,13 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        this.errorMessage = 'Error de inicio de sesión. Por favor, verifica tus credenciales.';
+        if (err.error && err.error.errors && err.error.errors.email && err.error.errors.email.length > 0) {
+          this.errorMessage = err.error.errors.email[0];
+        } else if (err.error && err.error.message) {
+          this.errorMessage = err.error.message;
+        } else {
+          this.errorMessage = 'Error de inicio de sesión. Por favor, verifica tus credenciales.';
+        }
         console.error(err);
       }
     });

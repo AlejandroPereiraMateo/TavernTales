@@ -1,4 +1,12 @@
-<div class="register-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="register-container">
   <h2>Registro</h2>
   <form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="register-form">
     <div class="form-group">
@@ -73,4 +81,9 @@
     </div>
     <button type="submit" [disabled]="registerForm.invalid" class="btn-register">Registrarse</button>
   </form>
-</div>
+    <p class="login-text">
+      Ya tienes una cuenta? <a routerLink="/login">Inicia Sesión</a>
+    </p>
+  </div>
+</body>
+</html>

@@ -65,6 +65,7 @@ html, body {
   border-color: #a9874e;
 }
 
+/*-webkit-autofill, para campos autorellenados*/
 .login-form .form-control:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #24211d inset !important;
   -webkit-text-fill-color: #a9874e !important;
@@ -100,7 +101,6 @@ html, body {
 
 .btn-login:hover {
   background-color: #856a3d;
-  cursor: not-allowed;
 }
 
 .register-text{

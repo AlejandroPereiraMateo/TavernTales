@@ -99,14 +99,15 @@ html, body {
 
 .btn-register:hover {
   background-color: #856a3d;
-  cursor: not-allowed;
 }
 
-.register-text{
+.login-text{
   color: #a9874e;
   padding-top: 50px;
 }
 
-.register-text a {
+.login-text a {
   color: #856a3d;
+  text-decoration: underline;
+  cursor: pointer;
 }

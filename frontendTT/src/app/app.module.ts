@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';  // Necesario para realizar solicitudes HTTP
+// Necesario para realizar solicitudes HTTP
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,  // Tu componente principal
-    // Otros componentes que necesites
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,  // Asegúrate de agregar esto para que puedas hacer peticiones HTTP
-    RouterModule.forRoot(routes)  // Importa las rutas para habilitar el enrutamiento
+    HttpClientModule,
+    FormsModule,
+    // Importar rutas
+    RouterModule.forRoot(routes) 
   ],
   providers: [],
-  bootstrap: [AppComponent]  // Define el componente principal que se carga primero
+  //Para decidir el componente que se cargará primero
+  bootstrap: [AppComponent]  
 })
 export class AppModule { }
