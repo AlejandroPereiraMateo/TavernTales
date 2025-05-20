@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class CampaniaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Campania::all());
+        $user = $request->user();
+        $campanias = Campania::where('user_id', $user->id)->get();
+        return response()->json($campanias);
     }
 }

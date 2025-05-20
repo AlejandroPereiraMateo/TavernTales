@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+.cabecera {
+  font-family: 'MedievalSharp';
+  background-image: url('/assets/img/FondoPosible1.jpg');
+  height: 800px;
+  min-height: 800px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  overflow: hidden;
+}
+
+.cabecera::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, var(--color-black) 100%);
+  z-index: 0;
+}
+
+.cabecera-contenido {
+  padding-top: 40px;
+  position: relative;
+  color: var(--color-beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cabecera-titulo {
+  position: relative;
+  z-index: 1;
+  color: var(--color-beige);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cabecera-titulo h1{
+  font-size: 60px;
+}
+
+.cabecera-titulo h1 strong {
+  color: var(--color-gold);
+  font-weight: 900;
+}

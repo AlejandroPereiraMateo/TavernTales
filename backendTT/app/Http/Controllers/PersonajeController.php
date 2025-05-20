@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 
 class PersonajeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(Personaje::all());
+        $user = $request->user();
+        $personajes = Personaje::where('user_id', $user->id)->get();
+        return response()->json($personajes);
     }
 }

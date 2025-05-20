@@ -1,10 +1,19 @@
-html, body, app-root {
+:root {
+  --color-purple-dark: #412042;
+  --color-purple-light: #69356b;
+  --color-black: #111;
+  --color-light-black: #24211d;
+  --color-gold: #a9874e;
+  --color-gold-dark: #9f754f;
+  --color-beige: #ebe1bf;
+  --color-beige-dark: #cfc1a6;
+}
+
+html, body {
+  width: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: #111;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--color-black);
+  color: var(--color-beige);
+  font-family: 'MedievalSharp', cursive;
 }

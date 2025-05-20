@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-partidas',
   standalone: true,
-  template: `
-    <h1>Página de Partidas</h1>
-    <p>Bienvenido a la página de Partidas.</p>
-  `
+  imports: [RouterModule, NavbarComponent],
+  templateUrl: './partidas.component.html',
+  styleUrls: ['./partidas.component.css']
 })
 export class PartidasComponent {}

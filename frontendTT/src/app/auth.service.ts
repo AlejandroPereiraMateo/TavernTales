@@ -12,7 +12,7 @@ interface LoginResponse {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = 'http://127.0.0.1:8000/api';
   private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
 
   constructor(private http: HttpClient) {}
@@ -30,12 +30,13 @@ export class AuthService {
     );
   }
 
-  register(name: string, email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, { name, email, password, password_confirmation: password });
+  register(formData: FormData): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, formData);
   }
 
   logout(): void {
-    localStorage.removeItem('access_token');
+    localStorage.clear();
+    sessionStorage.clear();
     this.loggedIn.next(false);
   }
 
@@ -46,4 +47,21 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem('access_token');
   }
+
+  getProfile(): Observable<any> {
+    const token = this.getToken();
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+    return this.http.get<any>(`${this.apiUrl}/user`, { headers });
+  }
+
+  updateProfile(formData: FormData): Observable<any> {
+    const token = this.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`
+    });
+    return this.http.post<any>(`${this.apiUrl}/update-profile`, formData, { headers });
+  }
+
 }

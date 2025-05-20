@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-recursos',
   standalone: true,
-  template: `
-    <h1>Página de Recursos</h1>
-    <p>Bienvenido a la página de Recursos.</p>
-  `
+  imports: [NavbarComponent],
+  templateUrl: './recursos.component.html',
+  styleUrls: ['./recursos.component.css']
 })
 export class RecursosComponent {}

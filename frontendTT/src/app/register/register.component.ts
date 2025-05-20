@@ -17,17 +17,36 @@ export class RegisterComponent {
   email = '';
   password = '';
   passwordConfirm = '';
+  rol = 'jugador';
   errorMessage = '';
   successMessage = '';
+  // selectedFile: File | null = null;
 
   constructor(private authService: AuthService, private router: Router) {}
+
+  // onFileSelected(event: any): void {
+  //   if (event.target.files.length > 0) {
+  //     this.selectedFile = event.target.files[0];
+  //   }
+  // }
 
   onSubmit(): void {
     if (this.password !== this.passwordConfirm) {
       this.errorMessage = 'Las contraseñas no coinciden.';
       return;
     }
-    this.authService.register(this.name, this.email, this.password).subscribe({
+
+    const formData = new FormData();
+    formData.append('name', this.name);
+    formData.append('email', this.email);
+    formData.append('password', this.password);
+    formData.append('password_confirmation', this.passwordConfirm);
+    formData.append('rol', this.rol);
+    // if (this.selectedFile) {
+    //   formData.append('profile_photo', this.selectedFile);
+    // }
+
+    this.authService.register(formData).subscribe({
       next: () => {
         this.successMessage = '¡Registro exitoso! Redirigiendo a la página de inicio...';
         setTimeout(() => this.router.navigate(['/home']), 2000);

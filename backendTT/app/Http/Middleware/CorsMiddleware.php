@@ -10,7 +10,11 @@ class CorsMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        $response = $next($request);
+        if ($request->getMethod() === "OPTIONS") {
+            $response = response('', 200);
+        } else {
+            $response = $next($request);
+        }
 
         $response->headers->set('Access-Control-Allow-Origin', 'http://localhost:4200');
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');

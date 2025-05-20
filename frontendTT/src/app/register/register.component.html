@@ -73,11 +73,28 @@
         Por favor, confirma tu contraseña.
       </div>
     </div>
+    <!-- <div class="form-group">
+      <label for="profilePhoto">Foto de Perfil (opcional):</label>
+      <input type="file" id="profilePhoto" (change)="onFileSelected($event)" />
+    </div> -->
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>
     <div *ngIf="successMessage" class="success-message">
       {{ successMessage }}
+    </div>
+    <div class="form-group">
+      <label>Rol:</label>
+      <div>
+        <label>
+          <input type="radio" name="rol" [(ngModel)]="rol" value="maestro" required />
+          Master
+        </label>
+        <label>
+          <input type="radio" name="rol" [(ngModel)]="rol" value="jugador" required />
+          Jugador
+        </label>
+      </div>
     </div>
     <button type="submit" [disabled]="registerForm.invalid" class="btn-register">Registrarse</button>
   </form>

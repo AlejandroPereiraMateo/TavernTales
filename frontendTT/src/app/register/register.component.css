@@ -20,7 +20,7 @@ html, body {
   width: 400px;
   margin: 50px auto;
   padding: 30px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-purple-light);
   border-radius: 8px;
   background-color: #24211d;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -65,7 +65,7 @@ html, body {
 }
 
 .register-form .form-control:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #24211d inset !important;
+  box-shadow: 0 0 0px 1000px #ccc inset !important;
   -webkit-text-fill-color: #a9874e !important;
 }
 
@@ -107,7 +107,7 @@ html, body {
 }
 
 .login-text a {
-  color: #856a3d;
+  color: var(--color-purple-light);
   text-decoration: underline;
   cursor: pointer;
 }

@@ -1,0 +1,29 @@
+.profile-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid var(--color-gold-dark);
+  border-radius: 8px;
+  background-color: var(--color-purple-dark);
+  color: var(--color-beige);
+}
+
+.profile-container h2 {
+  margin-bottom: 20px;
+  color: var(--color-gold);
+}
+
+.profile-container p {
+  font-size: 16px;
+  margin: 8px 0;
+  color: var(--color-beige);
+}
+
+.profile-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 15px;
+}

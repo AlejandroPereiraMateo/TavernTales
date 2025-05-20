@@ -1,15 +1,10 @@
-<nav class="navbar">
-  <ul class="nav-list">
-    <li><a routerLink="/home">Inicio</a></li>
-    <li><a routerLink="/personajes">Personajes</a></li>
-    <li><a routerLink="/partidas">Partidas</a></li>
-    <li><a routerLink="/recursos">Recursos</a></li>
-    <li><a routerLink="/register">Registro</a></li>
-    <li><a routerLink="/">Login</a></li>
-  </ul>
-</nav>
-
-<section class="home-content">
-  <h1>Bienvenido a Tavern Tales</h1>
-  <p>Aquí puedes completar el contenido de tu página de inicio.</p>
-</section>
+<div class="cabecera">
+  <div class="cabecera-titulo">
+    <h1>Bienvenido <strong>{{user.name}}</strong></h1>
+  </div>
+  <app-navbar></app-navbar>
+  <div class="cabecera-contenido">
+    <h1>Bienvenido a Tavern Tales</h1>
+    <p>Explora un mundo de fantasía y aventuras.</p>
+  </div>
+</div>

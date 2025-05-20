@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-personajes',
   standalone: true,
-  template: `
-    <h1>Página de Personajes</h1>
-    <p>Bienvenido a la página de Personajes.</p>
-  `
+  imports: [NavbarComponent],
+  templateUrl: './personajes.component.html',
+  styleUrls: ['./personajes.component.css']
 })
 export class PersonajesComponent {}
