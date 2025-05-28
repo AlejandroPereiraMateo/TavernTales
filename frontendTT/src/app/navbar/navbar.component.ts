@@ -11,6 +11,11 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent {
   constructor(private router: Router, private authService: AuthService) {}
+  menuAbierto = false;
+
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
 
   logout() {
     this.authService.logout();

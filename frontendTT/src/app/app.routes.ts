@@ -6,6 +6,8 @@ import { PersonajesComponent } from './personajes/personajes.component';
 import { PartidasComponent } from './partidas/partidas.component';
 import { RecursosComponent } from './recursos/recursos.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { NoticiasUserComponent } from './noticias-user/noticias-user.component';
+import { NoticiasAdminComponent } from './noticias-admin/noticias-admin.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -16,5 +18,7 @@ export const routes: Routes = [
   { path: 'partidas', component: PartidasComponent },
   { path: 'recursos', component: RecursosComponent },
   { path: 'perfil', component: PerfilComponent },
+  { path: 'noticias-user', component: NoticiasUserComponent },
+  { path: 'noticias-admin', component: NoticiasAdminComponent },
   { path: '**', redirectTo: '' }
 ];

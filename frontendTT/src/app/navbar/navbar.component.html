@@ -1,6 +1,9 @@
 <div class="nav">
     <nav class="navbar">
-        <ul class="nav-list">
+        <button class="menu-toggle" (click)="toggleMenu()">
+            ☰ Menú
+        </button>
+        <ul class="nav-list" [class.show]="menuAbierto">
             <li><a routerLink="/home">Inicio</a></li>
             <li><a routerLink="/personajes">Personajes</a></li>
             <li><a routerLink="/partidas">Partidas</a></li>

@@ -1,0 +1,9 @@
+<div *ngFor="let noticia of noticias" class="noticia">
+  <h3>{{ noticia.titulo }}</h3>
+  <p>{{ noticia.contenido }}</p>
+  <small>{{ noticia.fecha }}</small>
+  <br>
+  <button *ngIf="user?.rol === 'administrador'" class="btnEliminar" (click)="eliminar(noticia.id!)">
+    Eliminar
+  </button>
+</div>

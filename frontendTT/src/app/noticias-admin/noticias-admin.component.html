@@ -1,0 +1,15 @@
+<form [formGroup]="noticiaForm" (ngSubmit)="crearNoticia()">
+  <input formControlName="titulo" placeholder="Título" />
+  <textarea formControlName="contenido" placeholder="Contenido"></textarea>
+  <input formControlName="fecha" type="date" />
+  <button type="submit" [disabled]="noticiaForm.invalid">Crear Noticia</button>
+</form>
+
+<hr/>
+
+<div *ngFor="let noticia of noticias" class="noticia-item">
+  <h3>{{ noticia.titulo }}</h3>
+  <p>{{ noticia.contenido }}</p>
+  <small>{{ noticia.fecha | date:'longDate' }}</small>
+  <button (click)="eliminarNoticia(noticia.id!)">Eliminar</button>
+</div>

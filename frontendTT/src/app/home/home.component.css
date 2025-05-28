@@ -3,7 +3,7 @@
 .cabecera {
   font-family: 'MedievalSharp';
   background-image: url('/assets/img/FondoPosible1.jpg');
-  height: 800px;
+  height: auto;
   min-height: 800px;
   background-size: cover;
   background-position: center;
@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   padding-top: 60px;
   overflow: hidden;
+  transition: height 0.3s ease;
 }
 
 .cabecera::before {
@@ -23,16 +24,6 @@
   pointer-events: none;
   background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, var(--color-black) 100%);
   z-index: 0;
-}
-
-.cabecera-contenido {
-  padding-top: 40px;
-  position: relative;
-  color: var(--color-beige);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .cabecera-titulo {
@@ -52,4 +43,209 @@
 .cabecera-titulo h1 strong {
   color: var(--color-gold);
   font-weight: 900;
+}
+
+.cabecera-contenido {
+  padding-top: 40px;
+  position: relative;
+  color: var(--color-beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Cuerpo*/
+.cuerpo {
+  background-color: var(--color-black);
+  color: var(--color-beige-dark);
+  padding: 3rem 1.5rem;
+}
+
+.seccion-intro,
+.seccion-caracteristicas,
+.seccion-final {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.seccion-intro h2,
+.seccion-caracteristicas h2,
+.seccion-final h2 {
+  font-size: 1.8rem;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.seccion-intro p {
+  color: var(--color-beige-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Características */
+.caracteristicas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.caracteristica {
+  background-color: var(--color-light-black);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.caracteristica:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(169, 135, 78, 0.5); /* dorado suave */
+}
+
+.caracteristica h3 {
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.caracteristica p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-beige-dark);
+}
+
+/*Noticias*/
+.noticias-rol {
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  background-color: var(--color-light-black);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(169,135,78,0.4);
+  color: var(--color-beige);
+  font-family: 'MedievalSharp', cursive;
+}
+
+.noticias-rol h2 {
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* Footer */
+
+.pie-pagina {
+  background-color: var(--color-light-black);
+  color: var(--color-beige-dark);
+  font-family: 'MedievalSharp', cursive;
+  padding: 2rem 1.5rem 1rem;
+  border-top: 3px solid var(--color-gold-dark);
+  margin-top: 4rem;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  gap: 2rem;
+}
+
+.footer-seccion {
+  flex: 1 1 220px;
+}
+
+.footer-seccion h3,
+.footer-seccion h4 {
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.footer-seccion p,
+.footer-seccion ul,
+.footer-seccion a {
+  color: var(--color-beige-dark);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.footer-seccion ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-seccion ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-seccion ul li a:hover {
+  text-decoration: underline;
+  color: var(--color-gold);
+}
+
+.redes-sociales a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  color: var(--color-gold);
+}
+
+.footer-legal {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color-beige-dark);
+  border-top: 1px solid var(--color-gold-dark);
+  padding-top: 1rem;
+}
+
+.footer-legal a {
+  color: var(--color-beige-dark);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+  color: var(--color-gold);
+}
+
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .cabecera-contenido h1 {
+    font-size: 1.5rem;
+  }
+
+  .cabecera-contenido h2 {
+    font-size: 1rem;
+  }
+
+  .seccion-intro h2,
+  .seccion-caracteristicas h2,
+  .seccion-final h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-seccion {
+    flex: none;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .redes-sociales a {
+    margin: 0 0.5rem 1rem;
+  }
 }

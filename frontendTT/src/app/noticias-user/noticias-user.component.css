@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+.noticia {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--color-gold-dark);
+}
+
+.noticia:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.noticia h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.3rem;
+  color: var(--color-gold);
+}
+
+.noticia p {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  color: var(--color-beige-dark);
+}
+
+.noticia small {
+  font-size: 0.85rem;
+  color: var(--color-beige-dark);
+  font-style: italic;
+}
+
+.btnEliminar {
+  background-color: var(--color-purple-dark);
+  color: var(--color-beige);
+  border: 2px solid var(--color-gold);
+  padding: 6px 12px;
+  font-weight: 700;
+  font-family: 'MedievalSharp';
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btnEliminar:hover {
+  background-color: var(--color-purple-light);
+  color: var(--color-beige-dark);
+  box-shadow: 0 0 1px var(--color-gold);
+}

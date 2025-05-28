@@ -20,9 +20,10 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(): void {
-    this.errorMessage = ''; // Resetear mensaje de error
+    this.errorMessage = '';
     this.authService.login(this.email, this.password).subscribe({
-      next: () => {
+      next: (res) => {
+        console.log('Login successful, token:', res.access_token);
         this.router.navigate(['/home']);
       },
       error: (err) => {
