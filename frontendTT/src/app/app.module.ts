@@ -13,19 +13,23 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 
+
+import { CrearPersonajeComponent } from './crear-personaje/crear-personaje.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PerfilComponent,
     NoticiasUserComponent,
-    NoticiasAdminComponent
+    NoticiasAdminComponent,
+    CrearPersonajeComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule, // <-- aquí debe ir
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

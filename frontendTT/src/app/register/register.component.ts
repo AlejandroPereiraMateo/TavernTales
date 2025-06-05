@@ -18,17 +18,28 @@ export class RegisterComponent {
   password = '';
   passwordConfirm = '';
   rol = 'jugador';
+  imagenBase64: string = '';
   errorMessage = '';
   successMessage = '';
   // selectedFile: File | null = null;
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  // onFileSelected(event: any): void {
-  //   if (event.target.files.length > 0) {
-  //     this.selectedFile = event.target.files[0];
-  //   }
-  // }
+  onImageSelected(event: any) {
+    const file: File = event.target.files[0];
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = () => {
+      this.imagenBase64 = reader.result as string;
+      console.log('Imagen en base64:', this.imagenBase64);
+    };
+
+    reader.onerror = error => {
+      console.error('Error al convertir imagen a base64', error);
+    };
+  }
 
   onSubmit(): void {
     if (this.password !== this.passwordConfirm) {

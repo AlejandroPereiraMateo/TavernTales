@@ -1,13 +1,26 @@
-<!-- <div class="profile-container" *ngIf="user; else loadingOrError">
-  <h2>Perfil de Usuario</h2>
-  <label for="name">Nombre:</label>
-  <input id="name" [(ngModel)]="user.name" />
-  <label for="email">Email:</label>
-  <input id="email" [(ngModel)]="user.email" />
-  <button (click)="saveProfile()">Guardar Cambios</button>
-</div>
+<section class="home-content">
+  <app-navbar></app-navbar>
 
-<ng-template #loadingOrError>
-  <p *ngIf="error">{{ error }}</p>
-  <p *ngIf="!error">Cargando datos del perfil...</p>
-</ng-template> -->
+  <div class="profile-container">
+    <h1 class="section-title">Perfil de Usuario</h1>
+
+    <div class="profile-card">
+      <div class="profile-avatar">
+      <img *ngIf="user && user.imagen" [src]="getImageUrl()" alt="{{ user.name }}" class="character-image" />
+      
+      <label class="btn-upload">
+        Cambiar imagen
+        <input type="file" (change)="onImageSelected($event)" hidden />
+      </label>
+    </div>
+
+      <div class="profile-info">
+        <p><strong>Nombre:</strong> {{ user?.name }}</p>
+        <p><strong>Correo:</strong> {{ user?.email }}</p>
+        <p><strong>Rol:</strong> {{ user?.rol }}</p>
+      </div>
+
+      <button class="btn-edit" (click)="saveProfile()">Editar Perfil</button>
+    </div>
+  </div>
+</section>

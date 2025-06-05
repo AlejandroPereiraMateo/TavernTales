@@ -1,0 +1,44 @@
+<form (ngSubmit)="guardarPersonaje()" #personajeForm="ngForm" class="form-container">
+  <h2>Crear Personaje</h2>
+
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" name="nombre" [(ngModel)]="personaje.nombre" required />
+  </div>
+
+  <div class="form-group">
+    <label for="img">Imagen:</label>
+    <input type="file" (change)="onImageSelected($event)" />
+  </div>
+
+  <div class="form-group">
+    <label for="raza">Raza:</label>
+    <select id="raza" name="raza" [(ngModel)]="raza" required>
+      <option value="" disabled selected>Selecciona una raza</option>
+      <option>Humano</option>
+      <option>Elfo</option>
+      <option>Enano</option>
+      <option>Orco</option>
+      <option>Mediano</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="clase">Clase:</label>
+    <select id="clase" name="clase" [(ngModel)]="clase" required>
+      <option value="" disabled selected>Selecciona una clase</option>
+      <option>Guerrero</option>
+      <option>Mago</option>
+      <option>Pícaro</option>
+      <option>Clérigo</option>
+      <option>Cazador</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="nivel">Nivel:</label>
+    <input id="nivel" type="number" name="nivel" [(ngModel)]="nivel" min="1" required />
+  </div>
+
+  <button type="submit" [disabled]="!personajeForm.form.valid">Guardar Personaje</button>
+</form>

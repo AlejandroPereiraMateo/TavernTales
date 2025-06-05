@@ -1,3 +1,7 @@
+<div class="crear" *ngIf="user?.rol === 'administrador'" >
+  <h1>Administrador: </h1>
+  <a routerLink="/noticias-admin" class="btnEnlaceCrear">Añadir Noticia</a>
+</div>
 <div *ngFor="let noticia of noticias" class="noticia">
   <h3>{{ noticia.titulo }}</h3>
   <p>{{ noticia.contenido }}</p>

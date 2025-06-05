@@ -79,6 +79,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'sometimes|string|max:255',
             'email' => 'sometimes|string|email|max:255|unique:users,email,' . $user->id,
+            'imagen' => 'sometimes|string|nullable',
         ]);
 
         if ($request->has('name')) {
@@ -88,6 +89,26 @@ class AuthController extends Controller
         if ($request->has('email')) {
             $user->email = $request->email;
         }
+
+        if ($request->has('imagen')) {
+            $imageData = $request->input('imagen'); // base64 data URL
+
+            // extraer la cadena base64 eliminando el prefijo 'data:image/jpeg;base64,'
+            list($type, $imageData) = explode(';', $imageData);
+            list(, $imageData)      = explode(',', $imageData);
+
+            $imageData = base64_decode($imageData);
+
+            // definir un nombre único para el archivo
+            $imageName = time() . '.png'; // o usa la extensión adecuada
+
+            // guardar archivo
+            file_put_contents(public_path('storage/profile_photos/' . $imageName), $imageData);
+
+            // guardar en DB
+            $user->imagen = $imageName;
+        }
+
 
         $user->save();
 

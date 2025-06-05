@@ -1,5 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
-.home-content {
-  font-family: 'MedievalSharp';
+.characters-container {
+  padding: 40px;
+  font-family: 'MedievalSharp', fantasy;
+  color: var(--color-beige);
+}
+
+.section-title {
+  font-size: 36px;
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.characters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.character-card {
+  background-color: var(--color-light-black);
+  border: 1px solid var(--color-purple-light);
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  cursor: default;
+}
+
+.character-card:hover {
+  transform: scale(1.03);
+}
+
+.character-card h2 {
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+
+.new-character-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-purple-dark);
+  color: var(--color-beige);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.new-character-card:hover {
+  background-color: var(--color-purple-light);
+  transform: scale(1.05);
+}
+
+.plus-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--color-gold);
+}
+
+.btnEnlaceCrear{
+  text-decoration: none;
+}
+
+.atributos-json {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 8px;
+  color: #333;
+}
+
+.character-image {
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  opacity: 0;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.character-card:hover .character-image {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  pointer-events: auto;
+  opacity: 1;
+  pointer-events: auto;
 }

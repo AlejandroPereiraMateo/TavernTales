@@ -1,5 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
 
-.home-content {
-  font-family: 'MedievalSharp';
+.resources-container {
+  padding: 40px;
+  font-family: 'MedievalSharp', fantasy;
+  color: var(--color-beige);
+}
+
+.section-title {
+  font-size: 36px;
+  color: var(--color-gold);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resources-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.resource-card {
+  background-color: var(--color-light-black);
+  border: 1px solid var(--color-purple-light);
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: scale(1.03);
+}
+
+.resource-card h2 {
+  color: var(--color-gold);
+  margin-bottom: 10px;
+}
+
+.download-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: var(--color-gold);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background-color: #856a3d;
+}
+
+.new-resource-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-purple-dark);
+  color: var(--color-beige);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.new-resource-card:hover {
+  background-color: var(--color-purple-light);
+  transform: scale(1.05);
+}
+
+.plus-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--color-gold);
 }

@@ -15,14 +15,12 @@ Route::get('/saludo', function () {
 // Authentication routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-// Route::get('/login', function () {
-//     return response()->json(['message' => 'Login route placeholder'], 404);
-// })->name('login');
-
 
 Route::get('/noticias', [NoticiaController::class, 'index']);
 Route::post('/noticias', [NoticiaController::class, 'store']);
 Route::delete('/noticias/{id}', [NoticiaController::class, 'destroy']);
+
+Route::post('/personajes', [PersonajeController::class, 'store']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);

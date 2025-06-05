@@ -1,6 +1,29 @@
 <section class="home-content">
   <app-navbar></app-navbar>
-  <div class="header-content">
-    <h1>Página de Personajes</h1>
+
+  <div class="characters-container">
+    <h1 class="section-title">Tus Personajes</h1>
+
+    <div class="characters-list">
+      <div *ngIf="error" class="error-message">{{ error }}</div>
+      <!-- Personajes del usuario -->
+      <div class="character-card" *ngFor="let personaje of personajesFiltrados">
+        <h2>{{ personaje.nombre }}</h2>
+        <img *ngIf="personaje.imagen" [src]="personaje.imagen" alt="{{ personaje.nombre }}" class="character-image" />
+        <div class="atributos" *ngIf="personaje.atributos">
+          <p *ngFor="let key of getKeys(personaje.atributos)">
+            <strong>{{ key | titlecase }}:</strong> {{ personaje.atributos[key] }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Crear nuevo personaje -->
+      <a routerLink="/crear-personaje" class="btnEnlaceCrear">
+        <div class="character-card new-character-card">
+            <div class="plus-icon">+</div>
+          <p>Crear nuevo personaje</p>
+        </div>
+      </a>
+    </div>
   </div>
 </section>

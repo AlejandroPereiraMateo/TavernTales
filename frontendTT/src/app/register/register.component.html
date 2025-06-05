@@ -73,10 +73,10 @@
         Por favor, confirma tu contraseña.
       </div>
     </div>
-    <!-- <div class="form-group">
-      <label for="profilePhoto">Foto de Perfil (opcional):</label>
-      <input type="file" id="profilePhoto" (change)="onFileSelected($event)" />
-    </div> -->
+    <div class="form-group">
+      <label for="img">Imagen de Perfil:</label>
+      <input type="file" (change)="onImageSelected($event)" />
+    </div>
     <div *ngIf="errorMessage" class="error-message">
       {{ errorMessage }}
     </div>

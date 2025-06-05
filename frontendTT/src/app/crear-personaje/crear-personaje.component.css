@@ -1,0 +1,66 @@
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--color-light-black);
+  border: 2px solid var(--color-gold);
+  border-radius: 12px;
+  color: var(--color-beige);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  color: var(--color-beige-dark);
+  margin-bottom: 0.4rem;
+}
+
+input,
+select {
+  padding: 0.6rem;
+  background-color: var(--color-purple-dark);
+  color: var(--color-beige);
+  border: 1px solid var(--color-gold-dark);
+  border-radius: 6px;
+  transition: border 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--color-gold);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover:enabled {
+  background-color: var(--color-gold-dark);
+}
+
+button[disabled] {
+  background-color: gray;
+  cursor: not-allowed;
+  color: #ccc;
+}

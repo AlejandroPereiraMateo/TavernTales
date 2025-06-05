@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NoticiaService, Noticia } from '../services/noticia.service';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './noticias-user.component.html',
   styleUrls: ['./noticias-user.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, RouterModule]
 })
 export class NoticiasUserComponent implements OnInit {
   noticias: Noticia[] = [];

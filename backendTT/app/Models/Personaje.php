@@ -15,8 +15,11 @@ class Personaje extends Model
     protected $fillable = [
         'nombre',
         'atributos',
-        'sistema_id',
-        'usuario',
-        'campania_id',
+        'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
