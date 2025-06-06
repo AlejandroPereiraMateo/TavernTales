@@ -14,7 +14,7 @@ Tavern Tales es una aplicación web para la gestión de personajes y campañas d
 
 - Backend: Laravel (PHP)
 - Frontend: Angular
-- Base de datos: MySQL (u otra compatible con Laravel)
+- Base de datos: MySQL
 - Autenticación: Laravel Sanctum
 
 ## Instalación y configuración
