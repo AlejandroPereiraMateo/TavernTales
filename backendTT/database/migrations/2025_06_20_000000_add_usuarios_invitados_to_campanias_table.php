@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('partidas', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('campanias', function (Blueprint $table) {
+            $table->json('usuarios_invitados')->nullable()->after('fecha_creacion');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('partidas');
+        Schema::table('campanias', function (Blueprint $table) {
+            $table->dropColumn('usuarios_invitados');
+        });
     }
 };

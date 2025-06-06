@@ -15,7 +15,7 @@
       </div>
 
       <!-- Mostrar solo si el usuario es máster o administrador -->
-      <div class="campaign-card new-campaign-card" *ngIf="user?.rol === 'master' || user?.rol === 'administrador'" (click)="irACrearCampania()">
+      <div class="campaign-card new-campaign-card" *ngIf="user?.rol === 'maestro' || user?.rol === 'administrador'" (click)="irACrearCampania()">
         <div class="plus-icon">+</div>
         <p>Crear nueva campaña</p>
       </div>

@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-recursos',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, CommonModule, NgFor],
   templateUrl: './recursos.component.html',
   styleUrls: ['./recursos.component.css']
 })
-export class RecursosComponent {}
+export class RecursosComponent {
+  recursos: any[] = [];
+}

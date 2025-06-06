@@ -30,4 +30,5 @@ class Campania extends Model
     {
         return $this->belongsTo(User::class, 'master_id', 'id');
     }
+
 }

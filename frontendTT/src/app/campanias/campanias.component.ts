@@ -10,12 +10,13 @@ import { CampaniasService } from '../services/campanias.service';
   selector: 'app-partidas',
   standalone: true,
   imports: [RouterModule, NavbarComponent, CommonModule, NgFor, NgIf],
-  templateUrl: './partidas.component.html',
-  styleUrls: ['./partidas.component.css']
+  templateUrl: './campanias.component.html',
+  styleUrls: ['./campanias.component.css']
 })
-export class PartidasComponent implements OnInit {
+export class CampaniasComponent implements OnInit {
   user: any;
   campaniasUsuario: any[] = [];
+  http: any;
 
   constructor(
     private router: Router,

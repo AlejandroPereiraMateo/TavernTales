@@ -3,13 +3,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PersonajesComponent } from './personajes/personajes.component';
-import { PartidasComponent } from './partidas/partidas.component';
 import { RecursosComponent } from './recursos/recursos.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NoticiasUserComponent } from './noticias-user/noticias-user.component';
 import { NoticiasAdminComponent } from './noticias-admin/noticias-admin.component';
 import { CrearPersonajeComponent } from './crear-personaje/crear-personaje.component';
 import { CrearCampaniaComponent } from './crear-campania/crear-campania.component';
+import { CampaniasComponent } from './campanias/campanias.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,7 +18,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'personajes', component: PersonajesComponent },
   { path: 'crear-personaje', component: CrearPersonajeComponent },
-  { path: 'partidas', component: PartidasComponent },
+  { path: 'campanias', component: CampaniasComponent },
   { path: 'crear-campania', component: CrearCampaniaComponent },
   { path: 'recursos', component: RecursosComponent },
   { path: 'perfil', component: PerfilComponent },

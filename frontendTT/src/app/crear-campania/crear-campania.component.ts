@@ -75,7 +75,7 @@ export class CrearCampaniaComponent implements OnInit {
           text: 'La campaña se ha creado correctamente.',
           confirmButtonColor: '#3085d6'
         }).then(() => {
-          this.router.navigate(['/partidas']);
+          this.router.navigate(['/campanias']);
         });
       },
       error: (err) => {

@@ -44,6 +44,11 @@ class CampaniaController extends Controller
             'usuariosInvitados.*' => 'email|exists:users,email',
         ]);
 
+        // Authorization check: only allow master_id to be the authenticated user
+        if ($request->user()->id !== $request->master_id) {
+            return response()->json(['error' => 'No autorizado para crear campaña para otro master'], 403);
+        }
+
         DB::beginTransaction();
 
         try {
@@ -62,7 +67,9 @@ class CampaniaController extends Controller
             return response()->json(['message' => 'Campaña creada correctamente', 'campania' => $campania], 201);
         } catch (\Exception $e) {
             DB::rollBack();
-            return response()->json(['error' => 'Error al crear la campaña', 'details' => $e->getMessage()], 500);
+            \Log::error('Error creating campaign: ' . $e->getMessage());
+            return response()->json(['error' => 'Error al crear la campaña'], 500);
         }
     }
 }
+

@@ -9,16 +9,19 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
-{
-    Schema::create('noticias', function (Blueprint $table) {
-        $table->id();
-        $table->string('titulo');
-        $table->text('contenido');
-        $table->date('fecha');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        if (!\Illuminate\Support\Facades\Schema::hasTable('noticias')) {
+            Schema::create('noticias', function (Blueprint $table) {
+                $table->id();
+                $table->string('titulo');
+                $table->text('contenido');
+                $table->date('fecha');
+                $table->timestamps();
+            });
+        }
+    }
+    
 
     /**
      * Reverse the migrations.
