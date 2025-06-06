@@ -18,5 +18,16 @@ class Campania extends Model
         'sistema_id',
         'master_id',
         'fecha_creacion',
+        'usuarios_invitados',
     ];
+
+    public function usuarios()
+    {
+        return $this->belongsToMany(User::class, 'campania_user', 'campania_id', 'user_id');
+    }
+
+    public function master()
+    {
+        return $this->belongsTo(User::class, 'master_id', 'id');
+    }
 }

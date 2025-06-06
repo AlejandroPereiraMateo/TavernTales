@@ -9,6 +9,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { NoticiasUserComponent } from './noticias-user/noticias-user.component';
 import { NoticiasAdminComponent } from './noticias-admin/noticias-admin.component';
 import { CrearPersonajeComponent } from './crear-personaje/crear-personaje.component';
+import { CrearCampaniaComponent } from './crear-campania/crear-campania.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'personajes', component: PersonajesComponent },
   { path: 'crear-personaje', component: CrearPersonajeComponent },
   { path: 'partidas', component: PartidasComponent },
+  { path: 'crear-campania', component: CrearCampaniaComponent },
   { path: 'recursos', component: RecursosComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'noticias-user', component: NoticiasUserComponent },

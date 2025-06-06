@@ -1,26 +1,18 @@
-<!-- <section class="home-content">
+<section class="home-content">
   <app-navbar></app-navbar>
 
   <div class="resources-container">
     <h1 class="section-title">Recursos</h1>
 
     <div class="resources-list">
-      <!-- Recurso individual 
+      <!-- Recurso individual -->
       <div class="resource-card" *ngFor="let recurso of recursos">
         <h2>{{ recurso.titulo }}</h2>
         <p>{{ recurso.descripcion }}</p>
         <a [href]="recurso.url" target="_blank" class="download-btn">Descargar</a>
       </div>
-
-      <!-- Card para subir nuevo recurso (solo para máster/admin) 
-      <div
-        class="resource-card new-resource-card"
-        *ngIf="usuario?.rol === 'master' || usuario?.rol === 'admin'"
-        (click)="irASubirRecurso()"
-      >
-        <div class="plus-icon">+</div>
-        <p>Subir nuevo recurso</p>
-      </div>
     </div>
+      <!-- Card para subir nuevo recurso (solo para máster/admin)  -->
+      
   </div>
-</section> -->
+</section>

@@ -30,5 +30,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/personajes', [PersonajeController::class, 'index']);
     Route::get('/campanias', [CampaniaController::class, 'index']);
+    Route::post('/campanias', [CampaniaController::class, 'store']);
 });
 

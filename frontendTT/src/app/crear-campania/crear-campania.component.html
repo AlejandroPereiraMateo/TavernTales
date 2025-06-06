@@ -1,0 +1,60 @@
+<div class="crear-campania-container">
+  <h2>Crear Nueva Campaña</h2>
+  <form (ngSubmit)="crearCampania()" #campaniaForm="ngForm" class="crear-campania-form">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="nombre"
+        required
+        minlength="3"
+        #nombreInput="ngModel"
+        class="form-control"
+      />
+      <div *ngIf="nombreInput.invalid && nombreInput.touched" class="error">
+        Por favor, introduce un nombre válido (mínimo 3 caracteres).
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripción:</label>
+      <textarea
+        id="descripcion"
+        name="descripcion"
+        [(ngModel)]="descripcion"
+        required
+        minlength="10"
+        #descripcionInput="ngModel"
+        class="form-control"
+      ></textarea>
+      <div *ngIf="descripcionInput.invalid && descripcionInput.touched" class="error">
+        Por favor, introduce una descripción válida (mínimo 10 caracteres).
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="newUserEmail">Añadir usuario por correo:</label>
+      <input
+        type="email"
+        id="newUserEmail"
+        name="newUserEmail"
+        [(ngModel)]="newUserEmail"
+        placeholder="usuario@ejemplo.com"
+        class="form-control"
+      />
+      <button type="button" (click)="addUserEmail()" class="btn-add-user">Añadir</button>
+    </div>
+    <div class="form-group">
+      <label>Usuarios invitados:</label>
+      <ul>
+        <li *ngFor="let email of userEmails">
+          {{ email }}
+          <button type="button" (click)="removeUserEmail(email)" class="btn-remove-user">Eliminar</button>
+        </li>
+      </ul>
+    </div>
+    <button type="submit" [disabled]="campaniaForm.invalid" class="btn-crear">
+      Crear Campaña
+    </button>
+  </form>
+</div>

@@ -1,23 +1,24 @@
  <section class="home-content">
   <app-navbar></app-navbar>
-  <!--
   <div class="campaigns-container">
     <h1 class="section-title">Tus Campañas</h1>
 
     <div class="campaigns-list">
-      <!-- Lista de campañas del usuario 
-      <div class="campaign-card" *ngFor="let campaña of campañasUsuario">
+      <!-- Lista de campañas del usuario -->
+      <div class="campaign-card" *ngFor="let campania of campaniasUsuario">
         <h2>{{ campania.nombre }}</h2>
-        <p>Juego: {{ campania.juego }}</p>
+        <p>Descripción: {{ campania.descripcion }}</p>
+        <p>Usuarios invitados: {{ campania.usuarios_invitados ? campania.usuarios_invitados.join(', ') : 'Ninguno' }}</p>
         <p>Máster: {{ campania.masterNombre }}</p>
+        <p>Fecha creación: {{ campania.fecha_creacion | date:'short' }}</p>
         <p>Sesiones: {{ campania.numeroSesiones }}</p>
       </div>
 
-      <!-- Mostrar solo si el usuario es máster o administrador 
-      <div class="campaign-card new-campaign-card" *ngIf="usuario?.rol === 'master' || usuario?.rol === 'admin'" (click)="irACrearCampaña()">
+      <!-- Mostrar solo si el usuario es máster o administrador -->
+      <div class="campaign-card new-campaign-card" *ngIf="user?.rol === 'master' || user?.rol === 'administrador'" (click)="irACrearCampania()">
         <div class="plus-icon">+</div>
         <p>Crear nueva campaña</p>
       </div>
     </div>
   </div>
-</section> -->
+</section>

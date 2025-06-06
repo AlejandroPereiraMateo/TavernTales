@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { RouterModule } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -43,7 +44,12 @@ export class RegisterComponent {
 
   onSubmit(): void {
     if (this.password !== this.passwordConfirm) {
-      this.errorMessage = 'Las contraseñas no coinciden.';
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Las contraseñas no coinciden.',
+        confirmButtonColor: '#d33'
+      });
       return;
     }
 
@@ -59,21 +65,38 @@ export class RegisterComponent {
 
     this.authService.register(formData).subscribe({
       next: () => {
-        this.successMessage = '¡Registro exitoso! Redirigiendo a la página de inicio...';
+        Swal.fire({
+          icon: 'success',
+          title: 'Registro exitoso',
+          text: '¡Registro exitoso! Redirigiendo a la página de inicio...',
+          confirmButtonColor: '#3085d6'
+        });
         setTimeout(() => this.router.navigate(['/home']), 2000);
       },
       error: (err) => {
         console.error('Error response from backend:', err);
+        let errorMsg = 'Error en el registro. Por favor, inténtalo de nuevo.';
         if (err.error && err.error.errors) {
           const errors = err.error.errors;
-          this.errorMessage = Object.values(errors).flat().join(' ');
+          errorMsg = Object.values(errors).flat().join(' ');
+          // Translate specific error messages
+          if (errorMsg.includes('The email has already been taken')) {
+            errorMsg = 'El correo electrónico ya está registrado.';
+          }
         } else if (err.error && err.error.message) {
-          this.errorMessage = err.error.message;
+          errorMsg = err.error.message;
+          if (errorMsg.includes('The email has already been taken')) {
+            errorMsg = 'El correo electrónico ya está registrado.';
+          }
         } else if (err.message) {
-          this.errorMessage = err.message;
-        } else {
-          this.errorMessage = 'Error en el registro. Por favor, inténtalo de nuevo.';
+          errorMsg = err.message;
         }
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: errorMsg,
+          confirmButtonColor: '#d33'
+        });
       }
     });
   }
