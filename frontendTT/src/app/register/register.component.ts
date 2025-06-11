@@ -58,16 +58,36 @@ export class RegisterComponent {
     formData.append('password', this.password);
     formData.append('password_confirmation', this.passwordConfirm);
     formData.append('rol', this.rol);
+    if (this.imagenBase64) {
+      // Append the base64 string without the data URL prefix
+      const base64Data = this.imagenBase64.split(',')[1];
+      formData.append('imagen', base64Data);
+    }
 
     this.authService.register(formData).subscribe({
       next: () => {
         Swal.fire({
           icon: 'success',
           title: 'Registro exitoso',
-          text: '¡Registro exitoso! Redirigiendo a la página de inicio...',
+          text: '¡Registro exitoso! Iniciando sesión y redirigiendo a la página de inicio...',
           confirmButtonColor: '#3085d6'
         });
-        setTimeout(() => this.router.navigate(['/home']), 2000);
+        // Automatically log in the user after successful registration
+        this.authService.login(this.email, this.password).subscribe({
+          next: () => {
+            setTimeout(() => this.router.navigate(['/home']), 2000);
+          },
+          error: (err) => {
+            console.error('Error al iniciar sesión después del registro:', err);
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'No se pudo iniciar sesión automáticamente. Por favor, inicia sesión manualmente.',
+              confirmButtonColor: '#d33'
+            });
+            this.router.navigate(['/login']);
+          }
+        });
       },
       error: (err) => {
         console.error('Error response from backend:', err);

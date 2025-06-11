@@ -18,16 +18,39 @@ class AuthController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'rol' => 'required|string|in:maestro,master,jugador',
+            'imagen' => 'sometimes|string|nullable',
         ]);
 
         Log::info('Registering user with role: ' . $request->rol);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'rol' => $request->rol,
-        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->rol = $request->rol;
+
+        if ($request->has('imagen')) {
+            $imageData = $request->input('imagen'); // base64 data
+
+            // extraer la cadena base64 eliminando el prefijo 'data:image/jpeg;base64,' si existe
+            if (strpos($imageData, ';base64,') !== false) {
+                list($type, $imageData) = explode(';', $imageData);
+                list(, $imageData)      = explode(',', $imageData);
+            }
+
+            $imageData = base64_decode($imageData);
+
+            // definir un nombre único para el archivo
+            $imageName = time() . '.png'; // o usa la extensión adecuada
+
+            // guardar archivo
+            file_put_contents(public_path('storage/profile_photos/' . $imageName), $imageData);
+
+            // guardar en DB
+            $user->imagen = $imageName;
+        }
+
+        $user->save();
 
         return response()->json(['message' => 'Usuario registrado correctamente'], 201);
     }
