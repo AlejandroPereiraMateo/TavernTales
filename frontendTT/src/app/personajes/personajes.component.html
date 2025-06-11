@@ -5,7 +5,6 @@
     <h1 class="section-title">Tus Personajes</h1>
 
     <div class="characters-list">
-      <div *ngIf="error" class="error-message">{{ error }}</div>
       <!-- Personajes del usuario -->
       <div class="character-card" *ngFor="let personaje of personajesFiltrados">
         <h2>{{ personaje.nombre }}</h2>
