@@ -1,0 +1,25 @@
+<div class="editar-personaje-container">
+  <h2>Crear Personaje</h2>
+  <form [formGroup]="personajeForm" (ngSubmit)="onSubmit()" class="crear-personaje-form">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" formControlName="nombre" class="form-control" />
+      <div class="error" *ngIf="personajeForm.get('nombre')?.invalid && personajeForm.get('nombre')?.touched">
+        Nombre es obligatorio.
+      </div>
+    </div>
+
+    <div formGroupName="atributos">
+      <div class="form-group" *ngFor="let key of getKeys(personajeForm.get('atributos')?.value)">
+        <label [for]="key">{{ key | titlecase }}:</label>
+        <input [id]="key" [formControlName]="key" class="form-control" />
+      </div>
+    </div>
+
+    <!-- Removed inline error display as error property does not exist -->
+
+    <button type="submit" [disabled]="loading || personajeForm.invalid" class="btn-crear">
+      {{ loading ? 'Guardando...' : 'Guardar' }}
+    </button>
+  </form>
+</div>

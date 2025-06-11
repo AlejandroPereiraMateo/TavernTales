@@ -6,57 +6,53 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body {
   height: 100%;
   background-color: var(--color-black);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  font-family: 'MedievalSharp', fantasy;
 }
 
 .form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  padding: 20px;
+  padding: 40px;
 }
 
 .form-container {
   background-color: var(--color-light-black);
   border: 2px solid var(--color-purple-light);
   border-radius: 10px;
-  padding: 30px;
-  width: 400px;
+  padding: 40px;
+  width: 100%;
+  max-width: 50vh;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .form-container h2 {
   text-align: center;
   color: var(--color-gold);
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .form-group label {
   display: block;
   color: var(--color-gold);
-  margin-bottom: 6px;
-  font-size: 16px;
+  margin-bottom: 8px;
+  font-size: 18px;
 }
 
 .form-control {
   width: 100%;
-  padding: 10px 12px;
-  font-size: 14px;
+  padding: 12px 14px;
+  font-size: 16px;
   border: 1px solid var(--color-purple-dark);
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: var(--color-beige-dark);
   color: var(--color-purple-dark);
   font-family: 'MedievalSharp', fantasy;
@@ -70,18 +66,18 @@ body, html {
 
 textarea.form-control {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .btn-news {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: var(--color-gold);
   border: none;
   color: white;
   font-weight: bold;
-  font-size: 16px;
-  border-radius: 5px;
+  font-size: 18px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

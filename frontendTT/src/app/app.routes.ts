@@ -8,8 +8,10 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { NoticiasUserComponent } from './noticias-user/noticias-user.component';
 import { NoticiasAdminComponent } from './noticias-admin/noticias-admin.component';
 import { CrearPersonajeComponent } from './crear-personaje/crear-personaje.component';
+// import { EditarPersonajeComponent } from './editar-personaje/editar-personaje.component';
 import { CrearCampaniaComponent } from './crear-campania/crear-campania.component';
 import { CampaniasComponent } from './campanias/campanias.component';
+import { EditarCampaniaComponent } from './editar-campania/editar-campania.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -20,6 +22,8 @@ export const routes: Routes = [
   { path: 'crear-personaje', component: CrearPersonajeComponent },
   { path: 'campanias', component: CampaniasComponent },
   { path: 'crear-campania', component: CrearCampaniaComponent },
+  { path: 'editar-campania/:id', component: EditarCampaniaComponent},
+  // { path: 'editar-personaje/:id', component: EditarPersonajeComponent },
   { path: 'recursos', component: RecursosComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'noticias-user', component: NoticiasUserComponent },

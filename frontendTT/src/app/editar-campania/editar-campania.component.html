@@ -1,8 +1,7 @@
 <app-navbar></app-navbar>
-  <div class="crear-campania-container">
-  <h2 *ngIf="isEditMode">Editar Campaña</h2>
-  <h2 *ngIf="!isEditMode">Crear Nueva Campaña</h2>
-  <form (ngSubmit)="crearCampania()" #campaniaForm="ngForm" class="crear-campania-form">
+<div class="editar-campania-container">
+  <h2>Editar Campaña</h2>
+  <form (ngSubmit)="actualizarCampania()" #campaniaForm="ngForm" class="editar-campania-form">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
       <input
@@ -55,8 +54,8 @@
         </li>
       </ul>
     </div>
-    <button type="submit" [disabled]="campaniaForm.invalid" class="btn-crear">
-      {{ isEditMode ? 'Actualizar Campaña' : 'Crear Campaña' }}
+    <button type="submit" [disabled]="campaniaForm.invalid" class="btn-actualizar">
+      Actualizar Campaña
     </button>
   </form>
 </div>

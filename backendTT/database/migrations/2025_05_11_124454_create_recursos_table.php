@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('recursos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('partida_id')->constrained()->onDelete('cascade');
+            $table->string('titulo');
+            $table->text('descripcion')->nullable();
+            $table->enum('tipo', ['documento', 'imagen', 'audio', 'texto']);
+            $table->string('ruta'); // Ruta al archivo almacenado
+            $table->boolean('visible')->default(false); // Solo máster puede activarlo
             $table->timestamps();
         });
     }

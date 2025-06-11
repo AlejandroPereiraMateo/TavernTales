@@ -20,8 +20,6 @@ Route::get('/noticias', [NoticiaController::class, 'index']);
 Route::post('/noticias', [NoticiaController::class, 'store']);
 Route::delete('/noticias/{id}', [NoticiaController::class, 'destroy']);
 
-Route::post('/personajes', [PersonajeController::class, 'store']);
-
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/update-profile', [AuthController::class, 'updateProfile']);
@@ -29,7 +27,11 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/personajes', [PersonajeController::class, 'index']);
+    Route::post('/personajes', [PersonajeController::class, 'store']);
+    // Route::get('/personajes/{id}', [PersonajeController::class, 'show']);
+    // Route::put('/personajes/{id}', [PersonajeController::class, 'update']);
     Route::get('/campanias', [CampaniaController::class, 'index']);
     Route::post('/campanias', [CampaniaController::class, 'store']);
+    Route::put('/campanias/{id}', [CampaniaController::class, 'update']);
 });
 

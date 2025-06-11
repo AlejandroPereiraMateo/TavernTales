@@ -58,13 +58,32 @@
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 15px auto;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    padding: 14px 24px;
+    font-weight: 800;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    background-color: var(--color-gold-dark);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.9);
   }
 
   .nav-list {
     display: none;
     flex-direction: column;
     align-items: center;
+    background-color: var(--color-light-black);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    padding: 25px 0;
+    max-width: 320px;
+    margin: 0 auto;
   }
 
   .nav-list.show {
@@ -72,6 +91,11 @@
   }
 
   .nav-list li {
-    margin: 10px 0;
+    margin: 15px 0;
+  }
+
+  .nav-list li a {
+    font-size: 1.1rem;
+    padding: 10px 20px;
   }
 }

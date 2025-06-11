@@ -3,6 +3,7 @@ import { PersonajesService } from '../services/personajes.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { NavbarComponent } from '../navbar/navbar.component'
 import Swal from 'sweetalert2';
 
 
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
   templateUrl: './crear-personaje.component.html',
   styleUrls: ['./crear-personaje.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NavbarComponent],
 })
 export class CrearPersonajeComponent implements OnInit {
   personaje: any = {

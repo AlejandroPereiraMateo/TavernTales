@@ -15,6 +15,7 @@ import { AuthInterceptor } from './auth.interceptor';
 
 
 import { CrearPersonajeComponent } from './crear-personaje/crear-personaje.component';
+// import { EditarPersonajeComponent } from './editar-personaje/editar-personaje.component';
 
 @NgModule({
   declarations: [

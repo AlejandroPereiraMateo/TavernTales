@@ -1,4 +1,4 @@
- <section class="home-content">
+<section class="home-content">
   <app-navbar></app-navbar>
   <div class="campaigns-container">
     <h1 class="section-title">Tus Campañas</h1>
@@ -12,6 +12,7 @@
         <p>Máster: {{ campania.masterNombre }}</p>
         <p>Fecha creación: {{ campania.fecha_creacion | date:'short' }}</p>
         <p>Sesiones: {{ campania.numeroSesiones }}</p>
+        <button *ngIf="user?.id === campania.master_id || user?.rol === 'administrador'" class="edit-button" (click)="editarCampania(campania)">Editar</button>
       </div>
 
       <!-- Mostrar solo si el usuario es máster o administrador -->

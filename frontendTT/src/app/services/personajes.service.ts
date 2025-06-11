@@ -30,4 +30,22 @@ export class PersonajesService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.get<any[]>('http://localhost:8000/api/personajes', { headers });
   }
+
+  getPersonajeById(id: string) {
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      throw new Error('No hay token guardado');
+    }
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<any>(`${this.apiUrl}/personajes/${id}`, { headers });
+  }
+
+  actualizarPersonaje(id: number, personaje: any): Observable<any> {
+    const token = localStorage.getItem('access_token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    });
+    return this.http.put(`${this.apiUrl}/personajes/${id}`, personaje, { headers });
+  }
 }

@@ -3,6 +3,7 @@ import  { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoticiaService, Noticia } from '../services/noticia.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-noticias-admin',
@@ -10,7 +11,8 @@ import { NoticiaService, Noticia } from '../services/noticia.service';
   styleUrls: ['./noticias-admin.component.css'],
   imports:[
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NavbarComponent
   ]
 })
 export class NoticiasAdminComponent implements OnInit {

@@ -18,6 +18,8 @@ export class CampaniasComponent implements OnInit {
   campaniasUsuario: any[] = [];
   http: any;
 
+  editingCampania: any = null;
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -51,5 +53,9 @@ export class CampaniasComponent implements OnInit {
 
   irACrearCampania() {
     this.router.navigate(['/crear-campania']);
+  }
+
+  editarCampania(campania: any) {
+    this.router.navigate(['/editar-campania', campania.id_campania]);
   }
 }

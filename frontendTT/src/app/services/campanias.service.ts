@@ -25,4 +25,8 @@ export class CampaniasService {
   crearCampania(campania: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, campania, { headers: this.getHeaders() });
   }
+
+  actualizarCampania(id: number, campania: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, campania, { headers: this.getHeaders() });
+  }
 }

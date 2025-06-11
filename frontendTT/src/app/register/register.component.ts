@@ -22,7 +22,6 @@ export class RegisterComponent {
   imagenBase64: string = '';
   errorMessage = '';
   successMessage = '';
-  // selectedFile: File | null = null;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -59,9 +58,6 @@ export class RegisterComponent {
     formData.append('password', this.password);
     formData.append('password_confirmation', this.passwordConfirm);
     formData.append('rol', this.rol);
-    // if (this.selectedFile) {
-    //   formData.append('profile_photo', this.selectedFile);
-    // }
 
     this.authService.register(formData).subscribe({
       next: () => {
@@ -79,7 +75,6 @@ export class RegisterComponent {
         if (err.error && err.error.errors) {
           const errors = err.error.errors;
           errorMsg = Object.values(errors).flat().join(' ');
-          // Translate specific error messages
           if (errorMsg.includes('The email has already been taken')) {
             errorMsg = 'El correo electrónico ya está registrado.';
           }
